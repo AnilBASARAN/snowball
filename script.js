@@ -1,12 +1,15 @@
 /** @type {HTMLCanvasElement} */ 
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
-CANVAS_WIDTH = canvas.width = 500;
-CANVAS_HEIGHT = canvas.height = 1000;
+
+// Dynamically set canvas width and height based on screen size
+const CANVAS_WIDTH = canvas.width = Math.min(500, window.innerWidth);
+const CANVAS_HEIGHT = canvas.height = Math.min(1000, window.innerHeight);
+
 let gameCount = 1000;
 let enemiesArray = [];
 let gameSpeed = 1;
-let contained = true; // Variable to track if enemies are contained
+let contained = true;  // Variable to track if enemies are contained
 
 ////////////////////////////////////////////////////////////
 // Checkbox for containing enemies
@@ -25,9 +28,9 @@ sliderSpeed.value = gameSpeed;
 const showGameSpeed = document.getElementById("gameSpeed");
 showGameSpeed.innerHTML = gameSpeed;
 
-sliderSpeed.addEventListener("change", function(e){
+sliderSpeed.addEventListener("input", function(e){
     gameSpeed = e.target.value;
-    showGameSpeed.innerHTML = e.target.value;
+    showGameSpeed.innerHTML = gameSpeed;
 });
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
@@ -38,7 +41,7 @@ sliderCount.value = gameCount;
 const showGameCount = document.getElementById("gameCount");
 showGameCount.innerHTML = gameCount;
 
-sliderCount.addEventListener("change", function(e) {
+sliderCount.addEventListener("input", function(e) {
     gameCount = parseInt(e.target.value);  // Parse to integer
     showGameCount.innerHTML = gameCount;
 
