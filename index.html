@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="container" >
+
+        <div id="variables">
+            <p> speed: <span id="gameSpeed" ></span></p>
+            <input type="range" min="0" max="20" value="5" class="slider" id="sliderSpeed">
+            
+            <p> count: <span id="gameCount" ></span></p>
+            <input type="range" min="0" max="50000" value="1000" class="slider" id="sliderCount">
+    
+            <p> contained: <span id="gameContained" ></span></p>
+            <input type="checkbox"  value="checkbox"  id="sliderContained">
+        </div>
+        
+
+       
+    </div>
+    <canvas id="canvas1"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
